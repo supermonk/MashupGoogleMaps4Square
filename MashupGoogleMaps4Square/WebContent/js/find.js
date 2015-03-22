@@ -1,5 +1,5 @@
 /**
- * 
+ * Initiaze Method sets the AutoComplte option for Place's Entry
  */
 var geocoder;
 var map;
@@ -43,6 +43,9 @@ function initialize() {
 
 }
 
+/**
+ * Finds the Co-ordinates of place entered by using google geocoder
+ */
 function codeAddress() {
 	geocoder = new google.maps.Geocoder();
 	var address = document.getElementById("my-address").value;
@@ -61,7 +64,9 @@ function codeAddress() {
 
 }
 
-
+/**
+ * Call the Mule application to get Data and then Data is  Displayed
+ */
 function call4Square(lat, lng) {
 	var quer = document.getElementById("query").value;
 	//var url = "https://api.foursquare.com/v2/venues/search";
@@ -70,13 +75,6 @@ function call4Square(lat, lng) {
 	.ajax(
 			url,
 			{
-//				data : {
-//					'client_id' : 'G24W5Z4BUBR1FIZHZEGHGSKGCEVR53DTYQN0IJCOYAXZBLCT',
-//					'client_secret' : 'N5XQJQCYW4JGLBYVOOXLLQXWQBCCFGVN3TSGMJ21GIBB0RLM',
-//					'v' : 20130815,
-//					'll' : lat + ',' + lng,
-//					'query' : quer
-//				},
 				crossDomain: true,
 				data : {
 					'lat' : lat,
